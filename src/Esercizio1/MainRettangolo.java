@@ -18,6 +18,11 @@ public class MainRettangolo {
 
     public static void stampaDueRettangoli(Rettangolo r1, Rettangolo r2){
 
+        //oppure
+//        stampaRettangolo(r1);
+//        stampaRettangolo(r2);
+        //e poi la somma
+
         System.out.println("L'area del rettangolo r1 è: " + r1.calcolaArea() + ", il perimetro del rettangolo r1 è: " + r1.calcolaPerimetro());
 
 
