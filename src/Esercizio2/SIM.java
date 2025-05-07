@@ -2,36 +2,44 @@ package Esercizio2;
 
 public class SIM {
     private String numero;
-    private int credito;
+    private double credito;
     private Chiamata[] chiamate;
-    private int chiamateEffettuate; // contatore interno
+
 
     public SIM(String numero) {
         this.numero = numero;
-        this.credito = 0;
-        this.chiamate = new Chiamata[5];
-        this.chiamateEffettuate = 0;
+        //credito = 0 è di default
     }
 
-    public void aggiungiChiamata(Chiamata c) {
-        // scorrevole: rimuove la più vecchia se superiamo le 5
-        if (chiamateEffettuate < 5) {
-            chiamate[chiamateEffettuate] = c;
-            chiamateEffettuate++;
-        } else {
-            // shift a sinistra
-            for (int i = 0; i < 4; i++) {
-                chiamate[i] = chiamate[i + 1];
-            }
-            chiamate[4] = c;
-        }
+    public String getNumero() {
+        return numero;
     }
 
-    public void stampa() {
-        System.out.println("Numero SIM: " + numero);
-        System.out.println("Credito disponibile: " + credito + "€");
-        System.out.println("Ultime chiamate:");
-        for (int i = 0; i < chiamateEffettuate; i++) {
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public Chiamata[] getChiamate() {
+        return chiamate;
+    }
+
+    public void setChiamate(Chiamata[] chiamate) {
+        this.chiamate = chiamate;
+    }
+
+    public double getCredito() {
+        return credito;
+    }
+
+    public void setCredito(double credito) {
+        this.credito = credito;
+    }
+
+    public void stampaSim(){
+        System.out.println("Il numero è: " + numero);
+        System.out.println("Il credito disponibile è: " + credito);
+
+        for (int i = 0; i < chiamate.length; i++) {
             chiamate[i].stampa();
         }
     }
